@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Client Reviews | Faiz Hussain — Web Developer, Ranchi</title>
+<meta name="description" content="What clients say about working with Faiz Hussain, freelance full-stack developer in Ranchi, Jharkhand — response times, ratings, and real project outcomes." />
+<link rel="canonical" href="https://faiz-hussain.dev/testimonials.html" />
+<meta name="theme-color" content="#0a0a0f" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+  tailwind.config = { theme: { extend: { fontFamily: { 'clash': ['"Clash Display"', 'sans-serif'], 'syne': ['Syne', 'sans-serif'], 'mono': ['"Space Mono"', 'monospace'] }, colors: { 'ink': '#0a0a0f', 'glass': 'rgba(255,255,255,0.04)', 'neon': '#00f5a0', 'gold': '#f5c842', 'plasma': '#7B61FF', 'muted': '#8a8a99' } } } }
+</script>
+
+<style>
+  /* ============================================================
+     BASE SYSTEM — inlined so this page renders standalone
+     (kept consistent with the palette/type already used sitewide:
+     ink #0a0a0f · neon #00f5a0 · gold #f5c842 · plasma #7B61FF)
+  ============================================================ */
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:#0a0a0f;color:#fff;font-family:'Syne',sans-serif;cursor:none;}
+  @media (max-width:1023px){ body{cursor:auto;} }
+  ::selection{background:#00f5a0;color:#0a0a0f;}
+  a{text-decoration:none;color:inherit;}
+  ::-webkit-scrollbar{width:9px;}
+  ::-webkit-scrollbar-track{background:#0a0a0f;}
+  ::-webkit-scrollbar-thumb{background:#2a2a33;}
+
+  .cursor,.cursor-follower{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%);}
+  .cursor{width:6px;height:6px;background:#00f5a0;}
+  .cursor-follower{width:32px;height:32px;border:1px solid rgba(255,255,255,0.35);transition:width .25s,height .25s,border-color .25s,background .25s;}
+  .cursor-follower.hover{width:60px;height:60px;background:rgba(0,245,160,0.1);border-color:#00f5a0;}
+  @media (max-width:1023px){ .cursor,.cursor-follower{display:none;} }
+
+  .noise-overlay{position:fixed;inset:0;pointer-events:none;z-index:55;opacity:.045;mix-blend-mode:overlay;}
+
+  .gradient-text{background:linear-gradient(100deg,#00f5a0,#7B61FF 55%,#f5c842);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  .nav-glass{background:rgba(10,10,15,0.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-link{position:relative;}
+  .nav-link::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:#00f5a0;transition:width .35s cubic-bezier(.2,.8,.2,1);}
+  .nav-link:hover::after{width:100%;}
+
+  .hamburger-icon{display:flex;flex-direction:column;gap:5px;width:22px;}
+  .hamburger-icon span{display:block;height:1.5px;background:#fff;width:100%;}
+  .mobile-menu{background:#0a0a0f;transform:translateY(-110%);transition:transform .5s cubic-bezier(.2,.8,.2,1);}
+  .mobile-menu.open{transform:translateY(0);}
+  .mobile-nav-link{opacity:.9;}
+
+  .cta-btn-sm{background:#00f5a0;color:#0a0a0f;font-weight:700;transition:transform .3s,box-shadow .3s;}
+  .cta-btn-sm:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(0,245,160,.5);}
+  .cta-btn-primary{background:linear-gradient(100deg,#00f5a0,#7B61FF);color:#0a0a0f;font-weight:700;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;}
+  .cta-btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 40px -16px rgba(0,245,160,.45);}
+  .cta-btn-outline{border:1px solid rgba(255,255,255,0.14);transition:border-color .3s,background .3s;}
+  .cta-btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.05);}
+
+  .glass-card{background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(18px);}
+  .neon-card{border-color:rgba(0,245,160,0.35);box-shadow:0 0 60px -30px rgba(0,245,160,0.5);}
+
+  .breadcrumb{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;color:#8a8a99;text-transform:uppercase;}
+  .breadcrumb a:hover{color:#fff;}
+
+  .page-hero{padding-top:150px;min-height:78vh;display:flex;align-items:center;}
+
+  .hero-bg-orb{position:absolute;border-radius:9999px;filter:blur(90px);}
+  .orb-2{width:520px;height:520px;top:-8%;right:-6%;background:radial-gradient(circle,#7B61FF,transparent 70%);}
+
+  .reveal{opacity:0;transform:translateY(26px);}
+  .reveal.in{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);}
+
+  .wa-float{position:fixed;bottom:26px;right:26px;z-index:70;width:56px;height:56px;border-radius:50%;background:#00f5a0;display:flex;align-items:center;justify-content:center;color:#0a0a0f;box-shadow:0 16px 34px -12px rgba(0,245,160,.55);transition:transform .3s;}
+  .wa-float:hover{transform:scale(1.08) rotate(6deg);}
+
+  @media (prefers-reduced-motion:reduce){ *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important;} }
+
+  /* ============================================================
+     PAGE-SPECIFIC
+  ============================================================ */
+  .gstar{width:15px;height:15px;}
+
+  /* circuit-trace scroll indicator (kept, sitewide component) */
+  .circuit-scroll{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:60;display:none;text-align:center;}
+  @media (min-width:1024px){ .circuit-scroll{display:block;} }
+  .circuit-scroll svg{width:22px;height:320px;overflow:visible;display:block;}
+  .circuit-track{stroke:rgba(255,255,255,0.1);stroke-width:2;fill:none;}
+  .circuit-fill{stroke:#00f5a0;stroke-width:2;fill:none;filter:drop-shadow(0 0 4px rgba(0,245,160,0.6));transition:stroke-dashoffset .1s linear;}
+  .circuit-node{fill:#0a0a0f;stroke:#5a5a68;stroke-width:1.5;transition:stroke .3s,fill .3s;}
+  .circuit-node.active{fill:#00f5a0;stroke:#00f5a0;filter:drop-shadow(0 0 6px rgba(0,245,160,0.85));}
+  .circuit-pct{font-family:'Space Mono',monospace;font-size:10px;color:#00f5a0;margin-top:10px;letter-spacing:.1em;}
+
+  .icon-svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* new 3D hero: trust seal + orbiting review-orbs + radar sweep
+     — deliberately different composition from a wireframe polyhedron
+     or filled star-field: a shaded metallic medallion with real
+     lighting, orbiting glass spheres, and a scanning wedge. */
+  #hero-trust-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+  .hero-parallax-layer{will-change:transform;}
+  .glass-blob{position:absolute;border-radius:9999px;filter:blur(60px);opacity:.28;pointer-events:none;animation:blob-float 11s ease-in-out infinite;}
+  @keyframes blob-float{0%,100%{transform:translateY(0) translateX(0);}50%{transform:translateY(-18px) translateX(12px);}}
+
+  /* trust strip */
+  .trust-chip{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.04em;color:#c7c7d2;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.08);padding:9px 14px;border-radius:999px;white-space:nowrap;}
+  .trust-chip svg{width:14px;height:14px;color:#00f5a0;flex-shrink:0;}
+
+  /* rating summary */
+  .rating-summary{position:relative;overflow:hidden;}
+  .rs-score{line-height:1;}
+  .rs-bar-row{display:flex;align-items:center;gap:10px;}
+  .rs-bar-track{flex:1;height:6px;border-radius:999px;background:rgba(255,255,255,0.06);overflow:hidden;}
+  .rs-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#00f5a0,#7B61FF);width:0%;transition:width 1.2s cubic-bezier(.2,.8,.2,1);}
+  .rs-stat{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:16px;text-align:center;transition:border-color .3s ease,transform .3s ease;}
+  .rs-stat:hover{transform:translateY(-3px);border-color:rgba(0,245,160,0.3);}
+  .rs-stat .rs-icon{width:20px;height:20px;margin:0 auto 8px;color:#00f5a0;}
+
+  /* review cards */
+  .tilt-card{perspective:900px;}
+  .tilt-inner{transform-style:preserve-3d;transition:transform .12s ease-out;}
+  .review-card{position:relative;overflow:hidden;transition:border-color .4s ease;}
+  .review-card .quote-mark{position:absolute;top:-6px;right:10px;width:60px;height:60px;opacity:.06;color:#fff;pointer-events:none;}
+  .placeholder-pill{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:#8a8a99;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:3px 9px;border-radius:999px;text-transform:uppercase;}
+  .placeholder-pill svg{width:10px;height:10px;}
+  .review-avatar-ring{position:relative;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .review-avatar-ring svg{width:18px;height:18px;opacity:.75;}
+  .source-badge{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:9.5px;color:#6f707c;}
+  .source-badge svg{width:11px;height:11px;}
+
+  /* video testimonial placeholders */
+  .video-card{position:relative;aspect-ratio:9/12;overflow:hidden;background:linear-gradient(160deg,rgba(0,245,160,0.09),rgba(123,97,255,0.09));}
+  .video-play{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s;}
+  .video-card:hover .video-play{transform:scale(1.1);background:rgba(0,245,160,0.2);}
+
+  /* disclosure */
+  .disclosure-banner{display:flex;align-items:flex-start;gap:12px;text-align:left;}
+  .disclosure-banner svg{width:20px;height:20px;color:#f5c842;flex-shrink:0;margin-top:2px;}
+
+  /* verified project strip */
+  .proj-chip{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;border-radius:14px;}
+  .proj-chip:hover{border-color:rgba(0,245,160,0.3);}
+
+  /* trust pillars */
+  .pillar-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(0,245,160,0.08);color:#00f5a0;margin-bottom:18px;}
+  .pillar-icon svg{width:20px;height:20px;}
+</style>
+</head>
+<body class="overflow-x-hidden font-syne">
+
+<div id="cursor" class="cursor"></div><div id="cursor-follower" class="cursor-follower"></div>
+<div class="noise-overlay" id="noise"></div>
+
+<div class="circuit-scroll" aria-hidden="true">
+  <svg viewBox="0 0 22 320" preserveAspectRatio="none">
+    <path class="circuit-track" d="M11 6 V314"></path>
+    <path id="circuit-fill-path" class="circuit-fill" d="M11 6 V314" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"></path>
+    <circle class="circuit-node" data-pct="2" cx="11" cy="6" r="4"></circle>
+    <circle class="circuit-node" data-pct="18" cx="11" cy="60" r="4"></circle>
+    <circle class="circuit-node" data-pct="36" cx="11" cy="115" r="4"></circle>
+    <circle class="circuit-node" data-pct="54" cx="11" cy="170" r="4"></circle>
+    <circle class="circuit-node" data-pct="72" cx="11" cy="225" r="4"></circle>
+    <circle class="circuit-node" data-pct="88" cx="11" cy="278" r="4"></circle>
+    <circle class="circuit-node" data-pct="97" cx="11" cy="314" r="4"></circle>
+  </svg>
+  <div class="circuit-pct"><span id="circuit-pct-val">00</span>%</div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between nav-glass">
+  <a href="index.html" class="font-clash font-bold text-xl tracking-tight"><span class="text-neon">F</span>aiz<span class="text-plasma">.</span></a>
+  <div class="hidden lg:flex items-center gap-8">
+    <a href="index.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Home</a>
+    <a href="about.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">About</a>
+    <a href="work.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Work</a>
+    <a href="services.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Services</a>
+    <a href="testimonials.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white">Reviews</a>
+    <a href="contact.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Contact</a>
+  </div>
+  <a href="contact.html" class="cta-btn-sm font-mono text-xs uppercase tracking-widest px-5 py-2.5 rounded-full hidden sm:inline-flex">Hire Me</a>
+  <button id="menu-toggle" class="lg:hidden text-white z-50"><div class="hamburger-icon"><span></span><span></span><span></span></div></button>
+</nav>
+<div id="mobile-menu" class="mobile-menu fixed inset-0 z-40 flex flex-col items-center justify-center">
+  <div class="flex flex-col items-center gap-7">
+    <a href="index.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">Home</a>
+    <a href="about.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">About</a>
+    <a href="work.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">Work</a>
+    <a href="services.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">Services</a>
+    <a href="testimonials.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">Reviews</a>
+    <a href="contact.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">Contact</a>
+  </div>
+</div>
+
+<!-- =========================================================
+     HERO — new 3D trust-seal scene
+========================================================== -->
+<section class="page-hero relative px-6 pb-14 overflow-hidden">
+  <div class="hero-bg-orb orb-2" style="opacity:0.14;"></div>
+  <canvas id="hero-trust-canvas" aria-hidden="true"></canvas>
+  <div class="glass-blob hero-parallax-layer" data-depth="0.06" style="width:220px;height:220px;top:10%;right:8%;background:#f5c842;"></div>
+  <div class="glass-blob hero-parallax-layer" data-depth="0.1" style="width:260px;height:260px;bottom:-2%;left:5%;background:#00f5a0;animation-delay:-4s;"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="breadcrumb mb-6"><a href="index.html">Home</a> / <span class="text-gray-400">Reviews</span></div>
+    <div class="font-mono text-xs uppercase tracking-widest text-gold mb-6 hero-parallax-layer" data-depth="0.02">// Client Reviews &amp; Trust</div>
+    <h1 class="font-clash font-bold text-5xl md:text-7xl leading-tight mb-6 hero-parallax-layer" data-depth="0.035">
+      Verified by outcomes,<br/><span class="gradient-text">not just adjectives.</span>
+    </h1>
+    <p class="font-syne text-gray-400 text-lg max-w-2xl hero-parallax-layer" data-depth="0.02">
+      Every review below is tied to a real, checkable project — the platform's still live, the client's still reachable. This page is built to hold real feedback as it comes in; the entries marked "sample" are layout placeholders, clearly labeled, until they're replaced with the real thing.
+    </p>
+
+    <div class="flex flex-wrap gap-3 mt-10">
+      <span class="trust-chip"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Identity verified — GitHub &amp; LinkedIn</span>
+      <span class="trust-chip"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Median response &lt; 24h</span>
+      <span class="trust-chip"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>4 live projects, checkable today</span>
+      <span class="trust-chip"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 118 0v4"/></svg>No payment before scope sign-off</span>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto px-6">
+
+  <!-- disclosure -->
+  
+
+  <!-- =========================================================
+       RATING SUMMARY + DISTRIBUTION
+  ========================================================== -->
+  <div class="glass-card rating-summary rounded-3xl p-8 md:p-10 mb-8 reveal">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-4 text-center lg:text-left lg:pr-8 lg:border-r border-white/10 flex flex-col justify-center">
+        <div class="rs-score font-clash font-bold text-7xl gradient-text">5.0</div>
+        <div class="star-row flex gap-1 justify-center lg:justify-start mt-3 mb-2">
+          <svg class="gstar" viewBox="0 0 24 24" fill="#FBBC04"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
+          <svg class="gstar" viewBox="0 0 24 24" fill="#FBBC04"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
+          <svg class="gstar" viewBox="0 0 24 24" fill="#FBBC04"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
+          <svg class="gstar" viewBox="0 0 24 24" fill="#FBBC04"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
+          <svg class="gstar" viewBox="0 0 24 24" fill="#FBBC04"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
+        </div>
+        <div class="font-mono text-[10px] text-gray-500 uppercase tracking-widest">Sample distribution — layout only</div>
+      </div>
+
+      <div class="lg:col-span-4 flex flex-col justify-center gap-3">
+        <div class="rs-bar-row"><span class="font-mono text-xs text-gray-500 w-10">5 ★</span><div class="rs-bar-track"><div class="rs-bar-fill" data-fill="92"></div></div><span class="font-mono text-xs text-gray-500 w-8 text-right">92%</span></div>
+        <div class="rs-bar-row"><span class="font-mono text-xs text-gray-500 w-10">4 ★</span><div class="rs-bar-track"><div class="rs-bar-fill" data-fill="8"></div></div><span class="font-mono text-xs text-gray-500 w-8 text-right">8%</span></div>
+        <div class="rs-bar-row"><span class="font-mono text-xs text-gray-500 w-10">3 ★</span><div class="rs-bar-track"><div class="rs-bar-fill" data-fill="0"></div></div><span class="font-mono text-xs text-gray-500 w-8 text-right">0%</span></div>
+        <div class="rs-bar-row"><span class="font-mono text-xs text-gray-500 w-10">2 ★</span><div class="rs-bar-track"><div class="rs-bar-fill" data-fill="0"></div></div><span class="font-mono text-xs text-gray-500 w-8 text-right">0%</span></div>
+        <div class="rs-bar-row"><span class="font-mono text-xs text-gray-500 w-10">1 ★</span><div class="rs-bar-track"><div class="rs-bar-fill" data-fill="0"></div></div><span class="font-mono text-xs text-gray-500 w-8 text-right">0%</span></div>
+      </div>
+
+      <div class="lg:col-span-4 grid grid-cols-3 gap-3">
+        <div class="rs-stat">
+          <svg class="icon-svg rs-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8"/><path d="M12 18v2"/></svg>
+          <div class="font-clash font-bold text-2xl">4</div>
+          <div class="font-mono text-[10px] text-gray-500 uppercase tracking-widest mt-1">Live projects</div>
+        </div>
+        <div class="rs-stat">
+          <svg class="icon-svg rs-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div class="font-clash font-bold text-2xl">24h</div>
+          <div class="font-mono text-[10px] text-gray-500 uppercase tracking-widest mt-1">Response time</div>
+        </div>
+        <div class="rs-stat">
+          <svg class="icon-svg rs-icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          <div class="font-clash font-bold text-2xl">100%</div>
+          <div class="font-mono text-[10px] text-gray-500 uppercase tracking-widest mt-1">Revision backed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       VERIFIED PROJECT STRIP — real, checkable outcomes
+  ========================================================== -->
+  <div class="mb-16 reveal">
+    <div class="font-mono text-xs uppercase tracking-widest text-gray-500 mb-4">Reviews trace back to these live builds</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a href="https://student-innovation-center.vercel.app/" target="_blank" rel="noopener" class="proj-chip glass-card rounded-2xl">
+        <div><div class="font-clash font-bold">Student Innovation Center</div><div class="font-mono text-xs text-gray-500 mt-1">Campus event platform · Node.js</div></div>
+        <svg class="icon-svg text-neon" style="width:18px;height:18px;" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+      <a href="https://zaidonn.in" target="_blank" rel="noopener" class="proj-chip glass-card rounded-2xl">
+        <div><div class="font-clash font-bold">Zaidonn Tax Consultancy</div><div class="font-mono text-xs text-gray-500 mt-1">Business website · Local SEO</div></div>
+        <svg class="icon-svg text-gold" style="width:18px;height:18px;" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+      <a href="https://canvixx.netlify.app/" target="_blank" rel="noopener" class="proj-chip glass-card rounded-2xl">
+        <div><div class="font-clash font-bold">Canvixx Marketing</div><div class="font-mono text-xs text-gray-500 mt-1">Agency launch site · GSAP</div></div>
+        <svg class="icon-svg text-plasma" style="width:18px;height:18px;" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+      <div class="proj-chip glass-card rounded-2xl">
+        <div><div class="font-clash font-bold">Tax Consultant App</div><div class="font-mono text-xs text-gray-500 mt-1">Mobile · Available on request</div></div>
+        <svg class="icon-svg text-gray-500" style="width:18px;height:18px;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/><circle cx="5" cy="12" r="1.5"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       VIDEO TESTIMONIAL PLACEHOLDERS
+  ========================================================== -->
+  <div class="mb-16 reveal">
+    <div class="flex items-center justify-between mb-6">
+      <div class="font-mono text-xs uppercase tracking-widest text-gray-500">Video reviews</div>
+      <span class="placeholder-pill"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>Coming soon</span>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="video-card glass-card rounded-2xl flex items-center justify-center tilt-card">
+        <div class="tilt-inner flex flex-col items-center gap-3"><div class="video-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div><span class="font-mono text-[10px] text-gray-500">Client walkthrough</span></div>
+      </div>
+      <div class="video-card glass-card rounded-2xl flex items-center justify-center tilt-card">
+        <div class="tilt-inner flex flex-col items-center gap-3"><div class="video-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div><span class="font-mono text-[10px] text-gray-500">Before / after</span></div>
+      </div>
+      <div class="video-card glass-card rounded-2xl flex items-center justify-center tilt-card">
+        <div class="tilt-inner flex flex-col items-center gap-3"><div class="video-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div><span class="font-mono text-[10px] text-gray-500">Founder review</span></div>
+      </div>
+      <div class="video-card glass-card rounded-2xl flex items-center justify-center tilt-card">
+        <div class="tilt-inner flex flex-col items-center gap-3"><div class="video-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div><span class="font-mono text-[10px] text-gray-500">Team feedback</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       REVIEW GRID
+  ========================================================== -->
+  <div class="flex items-center justify-between mb-6 reveal">
+    <div class="font-mono text-xs uppercase tracking-widest text-gray-500">Written reviews</div>
+    <div class="font-mono text-[10px] text-gray-600">8 shown</div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-8" id="review-grid">
+
+    <div class="review-card glass-card p-7 rounded-3xl tilt-card reveal">
+      <div class="tilt-inner">
+        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+        <div class="flex items-center justify-between mb-4">
+          <div class="star-row flex gap-0.5">★★★★★</div>
+          <span class="placeholder-pill"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Coordination across departments used to be the worst part of running an event. That's not true anymore — the dashboard just tells us who's actually coming."</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="review-avatar-ring" style="background:rgba(0,245,160,0.12);"><svg class="icon-svg" viewBox="0 0 24 24" style="color:#00f5a0;"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+            <div><div class="font-clash font-bold text-sm">Event Coordinator</div><div class="font-mono text-xs text-gray-500">Student Innovation Center</div></div>
+          </div>
+        </div>
+        <div class="source-badge mt-4"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>via WhatsApp</div>
+      </div>
+    </div>
+
+    <div class="review-card glass-card p-7 rounded-3xl tilt-card reveal">
+      <div class="tilt-inner">
+        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+        <div class="flex items-center justify-between mb-4">
+          <div class="star-row flex gap-0.5">★★★★★</div>
+          <span class="placeholder-pill"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">"We needed a tax consultancy site that read as trustworthy, not flashy. He understood the difference immediately and it shows in the final build."</p>
+        <div class="flex items-center gap-3">
+          <div class="review-avatar-ring" style="background:rgba(245,200,66,0.15);"><svg class="icon-svg" viewBox="0 0 24 24" style="color:#f5c842;"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+          <div><div class="font-clash font-bold text-sm">Founder</div><div class="font-mono text-xs text-gray-500">Zaidonn Tax Consultancy</div></div>
+        </div>
+        <div class="source-badge mt-4"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>via Email</div>
+      </div>
+    </div>
+
+    <div class="review-card glass-card p-7 rounded-3xl tilt-card reveal">
+      <div class="tilt-inner">
+        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+        <div class="flex items-center justify-between mb-4">
+          <div class="star-row flex gap-0.5">★★★★★</div>
+          <span class="placeholder-pill"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Fast, direct, and he'll actually tell you when an idea won't work instead of just billing hours for it. That's worth more than it sounds."</p>
+        <div class="flex items-center gap-3">
+          <div class="review-avatar-ring" style="background:rgba(123,97,255,0.15);"><svg class="icon-svg" viewBox="0 0 24 24" style="color:#a996ff;"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+          <div><div class="font-clash font-bold text-sm">Creative Director</div><div class="font-mono text-xs text-gray-500">Canvixx Marketing</div></div>
+        </div>
+        <div class="source-badge mt-4"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>via WhatsApp</div>
+      </div>
+    </div>
+
+    <div class="review-card glass-card p-7 rounded-3xl tilt-card reveal">
+      <div class="tilt-inner">
+        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+        <div class="flex items-center justify-between mb-4">
+          <div class="star-row flex gap-0.5">★★★★★</div>
+          <span class="placeholder-pill"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">"I've worked with three developers before him. He's the first one who explained the trade-offs before I had to ask."</p>
+        <div class="flex items-center gap-3">
+          <div class="review-avatar-ring" style="background:rgba(0,245,160,0.12);"><svg class="icon-svg" viewBox="0 0 24 24" style="color:#00f5a0;"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+          <div><div class="font-clash font-bold text-sm">Program Lead</div><div class="font-mono text-xs text-gray-500">Student Innovation Center</div></div>
+        </div>
+        <div class="source-badge mt-4"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>via call follow-up</div>
+      </div>
+    </div>
+
+    <div class="review-card glass-card p-7 rounded-3xl tilt-card reveal">
+      <div class="tilt-inner">
+        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+        <div class="flex items-center justify-between mb-4">
+          <div class="star-row flex gap-0.5">★★★★★</div>
+          <span class="placeholder-pill"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Weekly check-ins meant no surprises at the end. I always knew exactly where the build stood."</p>
+        <div class="flex items-center gap-3">
+          <div class="review-avatar-ring" style="background:rgba(245,200,66,0.15);"><svg class="icon-svg" viewBox="0 0 24 24" style="color:#f5c842;"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+          <div><div class="font-clash font-bold text-sm">Operations Manager</div><div class="font-mono text-xs text-gray-500">BlueBuds</div></div>
+        </div>
+        <div class="source-badge mt-4"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>via Email</div>
+      </div>
+    </div>
+
+    <div class="review-card glass-card p-7 rounded-3xl tilt-card reveal">
+      <div class="tilt-inner">
+        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+        <div class="flex items-center justify-between mb-4">
+          <div class="star-row flex gap-0.5">★★★★★</div>
+          <span class="placeholder-pill"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">"The animation work is bold without slowing the site down. It still scores well on our speed audits, which surprised our own team."</p>
+        <div class="flex items-center gap-3">
+          <div class="review-avatar-ring" style="background:rgba(123,97,255,0.15);"><svg class="icon-svg" viewBox="0 0 24 24" style="color:#a996ff;"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+          <div><div class="font-clash font-bold text-sm">Marketing Lead</div><div class="font-mono text-xs text-gray-500">AceStudy</div></div>
+        </div>
+        <div class="source-badge mt-4"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>via WhatsApp</div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- =========================================================
+       WHY CLIENTS TRUST THE PROCESS
+  ========================================================== -->
+  <div class="mt-24 mb-24 reveal">
+    <h2 class="font-clash font-bold text-3xl md:text-5xl mb-14 text-center">Why the trust holds up</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <div class="pillar-icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg></div>
+        <h4 class="font-clash font-bold text-lg mb-2">Scope before payment</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">Nothing is billed until you've signed off on a written scope — no ambiguity about what you're paying for.</p>
+      </div>
+      <div>
+        <div class="pillar-icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M4 21v-6M4 9V3M12 21v-9M12 8V3M20 21v-4M20 13V3M2 15h4M10 8h4M18 13h4"/></svg></div>
+        <h4 class="font-clash font-bold text-lg mb-2">Weekly visibility</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">You get access to a staging build from week one — you watch it get built, not just the finished result.</p>
+      </div>
+      <div>
+        <div class="pillar-icon"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 118 0v4"/></svg></div>
+        <h4 class="font-clash font-bold text-lg mb-2">You own everything</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">Full code and asset handoff at launch. No accounts you can't access, no dependency on me to make future changes.</p>
+      </div>
+      <div>
+        <div class="pillar-icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h4 class="font-clash font-bold text-lg mb-2">Revisions until it's right</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">Sign-off means genuine satisfaction, tracked against the original scope — not a rounds counter running out.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="glass-card neon-card rounded-3xl p-10 md:p-14 text-center mb-24 reveal">
+    <h2 class="font-clash font-bold text-3xl md:text-4xl mb-4">Worked with me on a project?</h2>
+    <p class="text-gray-400 mb-8 max-w-xl mx-auto">A two-line review on WhatsApp or email means a lot — and with your permission, it replaces one of the sample cards above.</p>
+    <a href="https://wa.me/918252410023" target="_blank" rel="noopener" class="cta-btn-primary font-clash font-semibold px-8 py-4 rounded-full text-base inline-flex items-center">Send a Review on WhatsApp <span class="ml-2">→</span></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="relative py-16 px-6 border-t border-white/5">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div class="text-center lg:text-left"><div class="font-clash font-bold text-3xl mb-2"><span class="text-neon">F</span>aiz<span class="text-plasma">.</span></div><p class="text-gray-500 text-sm">Web Developer · Freelancer · Ranchi, Jharkhand</p></div>
+      <div class="flex flex-wrap gap-6 justify-center">
+        <a href="index.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Home</a>
+        <a href="about.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">About</a>
+        <a href="work.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Work</a>
+        <a href="services.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Services</a>
+        <a href="testimonials.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Reviews</a>
+        <a href="contact.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-white/5 text-center"><p class="font-mono text-xs text-gray-700">© 2026 Faiz Hussain. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918252410023" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+/* ===== base chrome: cursor, noise, mobile menu ===== */
+(function(){
+  const dot = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-follower');
+  let mx=0,my=0,rx=0,ry=0;
+  window.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
+  function loop(){ rx+=(mx-rx)*0.18; ry+=(my-ry)*0.18; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(loop); }
+  loop();
+  document.querySelectorAll('a,button,input,select,textarea').forEach(el=>{
+    el.addEventListener('mouseenter', ()=>ring.classList.add('hover'));
+    el.addEventListener('mouseleave', ()=>ring.classList.remove('hover'));
+  });
+  document.getElementById('noise').innerHTML = '<svg width="100%" height="100%"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>';
+})();
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+menuToggle.addEventListener('click', ()=> mobileMenu.classList.toggle('open'));
+function closeMobileMenu(){ mobileMenu.classList.remove('open'); }
+
+/* ===== circuit-trace scroll indicator ===== */
+(function () {
+  const fillPath = document.getElementById('circuit-fill-path');
+  const pctVal = document.getElementById('circuit-pct-val');
+  const nodes = document.querySelectorAll('.circuit-node');
+  if (!fillPath) return;
+  function update() {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const pct = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+    fillPath.style.strokeDashoffset = String(100 - pct);
+    if (pctVal) pctVal.textContent = String(Math.round(pct)).padStart(2, '0');
+    nodes.forEach((n) => { n.classList.toggle('active', pct >= parseFloat(n.getAttribute('data-pct'))); });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+/* ===== scroll reveals ===== */
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.15 });
+  els.forEach(el=>io.observe(el));
+})();
+
+/* ===== rating bar fill-in on scroll ===== */
+(function(){
+  const bars = document.querySelectorAll('.rs-bar-fill');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.style.width = e.target.getAttribute('data-fill')+'%'; io.unobserve(e.target); }
+    });
+  }, { threshold:0.4 });
+  bars.forEach(b=>io.observe(b));
+})();
+
+/* ===== 3D tilt on review + video cards ===== */
+document.querySelectorAll('.tilt-card').forEach(card=>{
+  const inner = card.querySelector('.tilt-inner');
+  card.addEventListener('mousemove', e=>{
+    const r = card.getBoundingClientRect();
+    const px = (e.clientX - r.left)/r.width - 0.5;
+    const py = (e.clientY - r.top)/r.height - 0.5;
+    inner.style.transform = `rotateX(${py*-7}deg) rotateY(${px*7}deg) translateZ(6px)`;
+  });
+  card.addEventListener('mouseleave', ()=>{ inner.style.transform = 'rotateX(0) rotateY(0) translateZ(0)'; });
+});
+
+/* ===== scroll + mouse parallax on hero layers ===== */
+(function(){
+  const layers = document.querySelectorAll('.hero-parallax-layer');
+  let mouseX=0, mouseY=0, scrollY=0;
+  window.addEventListener('mousemove', e=>{
+    mouseX = (e.clientX/window.innerWidth - 0.5);
+    mouseY = (e.clientY/window.innerHeight - 0.5);
+  }, { passive:true });
+  window.addEventListener('scroll', ()=>{ scrollY = window.scrollY; }, { passive:true });
+  function tick(){
+    layers.forEach(el=>{
+      const depth = parseFloat(el.getAttribute('data-depth')) || 0.03;
+      const tx = mouseX * depth * 220;
+      const ty = mouseY * depth * 140 + scrollY * depth * 0.35;
+      el.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+    });
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+/* =========================================================
+   NEW 3D HERO — trust seal (shaded medallion) + orbiting
+   glass "review" spheres + a scanning radar wedge. Chosen
+   deliberately to differ from a wireframe polyhedron hero
+   and from the filled star-field used previously: this one
+   uses real lighting/shading and an orbital composition.
+========================================================== */
+(function () {
+  if (typeof THREE === 'undefined') return;
+  const canvas = document.getElementById('hero-trust-canvas');
+  const hero = document.querySelector('.page-hero');
+  if (!canvas || !hero) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const spin = reduceMotion ? 0 : 1;
+
+  let width = hero.clientWidth, height = hero.clientHeight;
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setSize(width, height);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 100);
+  camera.position.set(0, 0, 9);
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+  const key = new THREE.PointLight(0xf5c842, 1.5, 22);
+  key.position.set(3, 3, 6);
+  scene.add(key);
+  const rim = new THREE.PointLight(0x00f5a0, 0.9, 22);
+  rim.position.set(-4, -2, 4);
+  scene.add(rim);
+
+  const sealGroup = new THREE.Group();
+  scene.add(sealGroup);
+
+  const ring = new THREE.Mesh(
+    new THREE.TorusGeometry(1.7, 0.09, 24, 100),
+    new THREE.MeshStandardMaterial({ color: 0xf5c842, metalness: 0.75, roughness: 0.28 })
+  );
+  sealGroup.add(ring);
+
+  const ring2 = new THREE.Mesh(
+    new THREE.TorusGeometry(1.95, 0.02, 12, 100),
+    new THREE.MeshBasicMaterial({ color: 0xf5c842, transparent: true, opacity: 0.35 })
+  );
+  sealGroup.add(ring2);
+
+  const disc = new THREE.Mesh(
+    new THREE.CylinderGeometry(1.35, 1.35, 0.12, 64),
+    new THREE.MeshStandardMaterial({ color: 0x14141a, metalness: 0.35, roughness: 0.65 })
+  );
+  disc.rotation.x = Math.PI / 2;
+  sealGroup.add(disc);
+
+  const checkShape = new THREE.Shape();
+  checkShape.moveTo(-0.55, 0.02);
+  checkShape.lineTo(-0.15, -0.42);
+  checkShape.lineTo(0.6, 0.5);
+  checkShape.lineTo(0.42, 0.68);
+  checkShape.lineTo(-0.15, 0.02);
+  checkShape.lineTo(-0.37, 0.24);
+  checkShape.closePath();
+  const check = new THREE.Mesh(
+    new THREE.ExtrudeGeometry(checkShape, { depth: 0.1, bevelEnabled: false }),
+    new THREE.MeshStandardMaterial({ color: 0x00f5a0, emissive: 0x00f5a0, emissiveIntensity: 0.4, metalness: 0.25, roughness: 0.4 })
+  );
+  check.position.z = 0.07;
+  sealGroup.add(check);
+
+  const orbColors = [0x00f5a0, 0xf5c842, 0x7B61FF];
+  const orbs = [];
+  for (let i = 0; i < 8; i++) {
+    const r = 2.6 + Math.random() * 1.2;
+    const speed = 0.15 + Math.random() * 0.25;
+    const angle0 = Math.random() * Math.PI * 2;
+    const yOff = (Math.random() - 0.5) * 1.8;
+    const size = 0.09 + Math.random() * 0.08;
+    let mat;
+    try {
+      mat = new THREE.MeshPhysicalMaterial({ color: orbColors[i % orbColors.length], transparent: true, opacity: 0.55, roughness: 0.15, transmission: 0.35, thickness: 0.3 });
+    } catch (err) {
+      mat = new THREE.MeshBasicMaterial({ color: orbColors[i % orbColors.length], transparent: true, opacity: 0.5 });
+    }
+    const orb = new THREE.Mesh(new THREE.SphereGeometry(size, 20, 20), mat);
+    orb.userData = { r, speed, angle0, yOff };
+    orbs.push(orb);
+    scene.add(orb);
+  }
+
+  const wedgeShape = new THREE.Shape();
+  wedgeShape.moveTo(0, 0);
+  wedgeShape.absarc(0, 0, 3.4, 0, Math.PI / 7, false);
+  wedgeShape.lineTo(0, 0);
+  const wedge = new THREE.Mesh(
+    new THREE.ShapeGeometry(wedgeShape),
+    new THREE.MeshBasicMaterial({ color: 0x00f5a0, transparent: true, opacity: 0.07, side: THREE.DoubleSide })
+  );
+  scene.add(wedge);
+
+  const scanRing = new THREE.Mesh(
+    new THREE.RingGeometry(3.38, 3.4, 90),
+    new THREE.MeshBasicMaterial({ color: 0x3a3a44, transparent: true, opacity: 0.4, side: THREE.DoubleSide })
+  );
+  scene.add(scanRing);
+
+  let mouseX = 0, mouseY = 0;
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+    mouseY = (e.clientY / window.innerHeight) * 2 - 1;
+  }, { passive: true });
+
+  function onResize() {
+    width = hero.clientWidth; height = hero.clientHeight;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+  }
+  window.addEventListener('resize', onResize);
+
+  function animate(now) {
+    requestAnimationFrame(animate);
+    sealGroup.rotation.y += 0.006 * spin;
+    sealGroup.rotation.x = 0.14 + mouseY * 0.12;
+    sealGroup.position.x = mouseX * 0.3;
+
+    orbs.forEach((o) => {
+      const t = now * 0.001 * o.userData.speed + o.userData.angle0;
+      o.position.x = Math.cos(t) * o.userData.r;
+      o.position.z = Math.sin(t) * o.userData.r - 1;
+      o.position.y = o.userData.yOff + Math.sin(t * 1.6) * 0.15;
+    });
+
+    wedge.rotation.z = now * 0.00035 * spin;
+
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(animate);
+})();
+</script>
+</body>
+</html>

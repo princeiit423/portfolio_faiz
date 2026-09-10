@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Faiz Hussain | Web Developer in Ranchi, Jharkhand</title>
+  <meta name="description" content="Get in touch with Faiz Hussain, freelance full-stack web developer in Ranchi, Jharkhand. WhatsApp, email or send a project inquiry — response within 24 hours." />
+  <link rel="canonical" href="https://faiz-hussain.dev/contact.html" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { 'clash': ['"Clash Display"', 'sans-serif'], 'syne': ['Syne', 'sans-serif'], 'mono': ['"Space Mono"', 'monospace'] }, colors: { 'ink': '#0a0a0f', 'glass': 'rgba(255,255,255,0.04)', 'neon': '#00f5a0', 'gold': '#f5c842', 'plasma': '#7B61FF', 'muted': '#8a8a99' } } } }
+  </script>
+
+  <style>
+    /* ===== circuit-trace scroll indicator (site-wide component) ===== */
+    .circuit-scroll{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:60;display:none;text-align:center;}
+    @media (min-width:1024px){ .circuit-scroll{display:block;} }
+    .circuit-scroll svg{width:22px;height:320px;overflow:visible;display:block;}
+    .circuit-track{stroke:rgba(255,255,255,0.1);stroke-width:2;fill:none;}
+    .circuit-fill{stroke:#00f5a0;stroke-width:2;fill:none;filter:drop-shadow(0 0 4px rgba(0,245,160,0.6));transition:stroke-dashoffset .1s linear;}
+    .circuit-node{fill:#0a0a0f;stroke:#5a5a68;stroke-width:1.5;transition:stroke .3s,fill .3s;}
+    .circuit-node.active{fill:#00f5a0;stroke:#00f5a0;filter:drop-shadow(0 0 6px rgba(0,245,160,0.85));}
+    .circuit-pct{font-family:'Space Mono',monospace;font-size:10px;color:#00f5a0;margin-top:10px;letter-spacing:.1em;}
+
+    /* ===== premium line-icon system (no emoji) ===== */
+    .icon-svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+
+    /* ===== mini 3D hero accent + parallax glass blobs ===== */
+    #hero-mini-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+    .glass-blob{position:absolute;border-radius:9999px;filter:blur(55px);opacity:.32;pointer-events:none;animation:blob-float 9s ease-in-out infinite;will-change:transform;}
+    @keyframes blob-float{0%,100%{transform:translateY(0) translateX(0);}50%{transform:translateY(-18px) translateX(12px);}}
+
+    /* ===== shimmering headline accent ===== */
+    .shimmer-text{background-size:220% auto;animation:shimmer 5s linear infinite;}
+    @keyframes shimmer{0%{background-position:0% center;}100%{background-position:220% center;}}
+
+    /* ===== form: glass tilt card + icon-prefixed inputs ===== */
+    .form-card .tilt-inner{position:relative;}
+    .input-wrap{position:relative;}
+    .input-wrap .input-icon{position:absolute;left:15px;top:18px;width:18px;height:18px;color:#5a5a68;pointer-events:none;transition:color .3s ease;z-index:2;}
+    .input-wrap textarea ~ .input-icon{top:18px;}
+    .input-wrap:focus-within .input-icon{color:#00f5a0;}
+    .input-wrap .form-input{padding-left:46px !important;}
+    .input-wrap select.form-input{padding-left:46px !important;}
+
+    /* ===== contact info cards ===== */
+    .info-card{transition:transform .35s ease, border-color .35s ease;}
+    .info-card:hover{transform:translateY(-4px);}
+    .info-icon-chip{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;background:rgba(255,255,255,0.06);transition:transform .35s ease, box-shadow .35s ease;}
+    .info-card:hover .info-icon-chip{transform:scale(1.1);}
+
+    /* ===== direct contact buttons ===== */
+    .direct-contact-btn .btn-icon{width:16px;height:16px;flex-shrink:0;display:inline-flex;}
+
+    /* ===== trust line under submit ===== */
+    .privacy-note{display:flex;align-items:center;justify-content:center;gap:7px;font-family:'Space Mono',monospace;font-size:11px;color:#6b6b78;}
+    .privacy-note svg{width:13px;height:13px;color:#5a5a68;flex-shrink:0;}
+  </style>
+</head>
+<body class="bg-ink text-white overflow-x-hidden font-syne">
+  <div id="cursor" class="cursor"></div><div id="cursor-follower" class="cursor-follower"></div><div class="noise-overlay"></div>
+
+  <!-- SVG CIRCUIT-TRACE SCROLL INDICATOR -->
+  <div class="circuit-scroll" aria-hidden="true">
+    <svg viewBox="0 0 22 320" preserveAspectRatio="none">
+      <path class="circuit-track" d="M11 6 V314"></path>
+      <path id="circuit-fill-path" class="circuit-fill" d="M11 6 V314" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"></path>
+      <circle class="circuit-node" data-pct="2" cx="11" cy="6" r="4"></circle>
+      <circle class="circuit-node" data-pct="30" cx="11" cy="68" r="4"></circle>
+      <circle class="circuit-node" data-pct="55" cx="11" cy="131" r="4"></circle>
+      <circle class="circuit-node" data-pct="75" cx="11" cy="193" r="4"></circle>
+      <circle class="circuit-node" data-pct="90" cx="11" cy="255" r="4"></circle>
+      <circle class="circuit-node" data-pct="98" cx="11" cy="314" r="4"></circle>
+    </svg>
+    <div class="circuit-pct"><span id="circuit-pct-val">00</span>%</div>
+  </div>
+
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between nav-glass">
+    <a href="index.html" class="font-clash font-bold text-xl tracking-tight logo-text"><span class="text-neon">F</span>aiz<span class="text-plasma">.</span></a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="index.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Home</a>
+      <a href="about.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">About</a>
+      <a href="work.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Work</a>
+      <a href="services.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Services</a>
+      <a href="testimonials.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Reviews</a>
+      <a href="contact.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white transition-colors">Contact</a>
+    </div>
+    <a href="contact.html" class="cta-btn-sm font-mono text-xs uppercase tracking-widest px-5 py-2.5 rounded-full hidden sm:inline-flex">Hire Me</a>
+    <button id="menu-toggle" class="lg:hidden text-white z-50"><div class="hamburger-icon"><span></span><span></span><span></span></div></button>
+  </nav>
+  <div id="mobile-menu" class="mobile-menu fixed inset-0 z-40 flex flex-col items-center justify-center">
+    <div class="flex flex-col items-center gap-7">
+      <a href="index.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">Home</a>
+      <a href="about.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">About</a>
+      <a href="work.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">Work</a>
+      <a href="services.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">Services</a>
+      <a href="testimonials.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">Reviews</a>
+      <a href="contact.html" class="mobile-nav-link font-clash text-4xl font-bold" onclick="closeMobileMenu()">Contact</a>
+    </div>
+  </div>
+
+  <section class="page-hero relative px-6 pb-10 overflow-hidden">
+    <div class="contact-bg-orb" id="parallax-orb"></div>
+    <canvas id="hero-mini-canvas" aria-hidden="true"></canvas>
+    <div class="glass-blob" id="blob-1" style="width:220px;height:220px;top:10%;left:8%;background:#7B61FF;"></div>
+    <div class="glass-blob" id="blob-2" style="width:260px;height:260px;bottom:0%;right:6%;background:#f5c842;animation-delay:-3s;"></div>
+    <div class="max-w-4xl mx-auto relative z-10 text-center">
+      <div class="breadcrumb mb-6 text-center"><a href="index.html">Home</a> / <span class="text-gray-400">Contact</span></div>
+      <div class="section-label font-mono text-xs uppercase tracking-widest text-neon mb-6">// Let's Work Together</div>
+      <h1 class="font-clash font-bold text-5xl md:text-7xl leading-tight mb-6">Ready to Build<br/><span class="gradient-text shimmer-text">Something</span><br/>Amazing?</h1>
+      <p class="font-syne text-gray-400 text-lg max-w-2xl mx-auto">Whether you need a new website, a complete digital overhaul, or a custom SaaS product — tell me about your project and I'll reply within 24 hours.</p>
+    </div>
+  </section>
+
+  <svg class="svg-divider" viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="accent-path" d="M0,30 C300,-20 900,80 1200,30"/></svg>
+
+  <section class="px-6 pb-24 relative">
+    <div class="max-w-4xl mx-auto">
+      <div class="glass-card form-card rounded-3xl p-8 md:p-12 relative overflow-hidden tilt-card reveal">
+        <div class="tilt-inner">
+          <div class="form-glow"></div>
+          <div class="relative z-10">
+            <h2 class="font-clash font-bold text-2xl mb-2">Send a Project Inquiry</h2>
+            <p class="font-mono text-xs text-gray-500 mb-8 uppercase tracking-widest">Response within 24 hours · Directly to WhatsApp</p>
+
+            <form id="inquiry-form" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="form-group">
+                  <label class="form-label font-mono text-xs uppercase tracking-widest text-gray-500 mb-2 block">Your Name *</label>
+                  <div class="input-wrap">
+                    <svg class="icon-svg input-icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+                    <input type="text" id="client-name" required placeholder="e.g. Priya Sharma" class="form-input w-full" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label font-mono text-xs uppercase tracking-widest text-gray-500 mb-2 block">Email Address *</label>
+                  <div class="input-wrap">
+                    <svg class="icon-svg input-icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                    <input type="email" id="client-email" required placeholder="you@company.com" class="form-input w-full" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label font-mono text-xs uppercase tracking-widest text-gray-500 mb-2 block">Phone Number</label>
+                <div class="input-wrap">
+                  <svg class="icon-svg input-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <input type="tel" id="client-phone" placeholder="+91 98765 43210" class="form-input w-full" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label font-mono text-xs uppercase tracking-widest text-gray-500 mb-2 block">Service Required *</label>
+                <div class="input-wrap">
+                  <svg class="icon-svg input-icon" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                  <select id="service-type" required class="form-input w-full">
+                    <option value="" disabled selected>Select a service...</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="Mobile App Development">Mobile App Development</option>
+                    <option value="Full Stack / SaaS Application">Full Stack / SaaS Application</option>
+                    <option value="SEO Optimization">SEO Optimization</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                    <option value="Website Maintenance">Website Maintenance</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label font-mono text-xs uppercase tracking-widest text-gray-500 mb-2 block">Budget Range</label>
+                <div class="input-wrap">
+                  <svg class="icon-svg input-icon" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M16 12h.01"/><path d="M3 9h18"/></svg>
+                  <select id="budget" class="form-input w-full">
+                    <option value="" disabled selected>Select budget range...</option>
+                    <option value="Under ₹10,000">Under ₹10,000</option>
+                    <option value="₹10,000 - ₹25,000">₹10,000 - ₹25,000</option>
+                    <option value="₹25,000 - ₹50,000">₹25,000 - ₹50,000</option>
+                    <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
+                    <option value="Above ₹1,00,000">Above ₹1,00,000</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label font-mono text-xs uppercase tracking-widest text-gray-500 mb-2 block">Project Details *</label>
+                <div class="input-wrap">
+                  <svg class="icon-svg input-icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  <textarea id="project-details" required rows="5" placeholder="Tell me about your project, goals, timeline, and any specific requirements..." class="form-input w-full resize-none"></textarea>
+                </div>
+              </div>
+              <button type="submit" id="submit-btn" class="submit-btn w-full py-5 rounded-2xl font-clash font-bold text-xl flex items-center justify-center gap-3">
+                <span id="submit-text" class="inline-flex items-center gap-3">Send Inquiry via WhatsApp <svg class="icon-svg" viewBox="0 0 24 24" style="width:20px;height:20px;"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></span>
+                <div id="submit-spinner" class="hidden w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+              </button>
+              <p class="privacy-note">
+                <svg class="icon-svg" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                Your details go straight to WhatsApp — never shared or sold.
+              </p>
+            </form>
+
+            <div class="flex flex-wrap gap-4 mt-8 pt-8 border-t border-white/10">
+              <a href="https://wa.me/918252410023" target="_blank" rel="noopener" class="direct-contact-btn whatsapp-btn">
+                <span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+                WhatsApp
+              </a>
+              <a href="mailto:faiz18513@gmail.com" class="direct-contact-btn email-btn">
+                <span class="btn-icon"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+                Email
+              </a>
+              <a href="tel:+918252410023" class="direct-contact-btn call-btn">
+                <span class="btn-icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                Call
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="tilt-shine"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        <div class="glass-card info-card p-6 rounded-2xl text-center reveal">
+          <div class="info-icon-chip" style="color:#00f5a0;"><svg class="icon-svg" viewBox="0 0 24 24" style="width:22px;height:22px;"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg></div>
+          <div class="font-clash font-bold text-sm mb-1">Location</div><div class="font-mono text-xs text-gray-500">Ranchi, Jharkhand, India</div>
+        </div>
+        <div class="glass-card info-card p-6 rounded-2xl text-center reveal">
+          <div class="info-icon-chip" style="color:#f5c842;"><svg class="icon-svg" viewBox="0 0 24 24" style="width:22px;height:22px;"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div class="font-clash font-bold text-sm mb-1">Response Time</div><div class="font-mono text-xs text-gray-500">Within 24 hours</div>
+        </div>
+        <div class="glass-card info-card p-6 rounded-2xl text-center reveal">
+          <div class="info-icon-chip" style="color:#7B61FF;"><svg class="icon-svg" viewBox="0 0 24 24" style="width:22px;height:22px;"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg></div>
+          <div class="font-clash font-bold text-sm mb-1">Availability</div><div class="font-mono text-xs text-gray-500">Remote worldwide</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="relative py-16 px-6 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="text-center lg:text-left"><div class="font-clash font-bold text-3xl mb-2"><span class="text-neon">F</span>aiz<span class="text-plasma">.</span></div><p class="font-syne text-gray-500 text-sm">Web Developer · Freelancer · Ranchi, Jharkhand</p></div>
+        <div class="flex flex-wrap gap-6 justify-center">
+          <a href="index.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Home</a>
+          <a href="about.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">About</a>
+          <a href="work.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Work</a>
+          <a href="services.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Services</a>
+          <a href="testimonials.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Reviews</a>
+          <a href="contact.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Contact</a>
+        </div>
+        <div class="flex gap-4">
+          <a href="https://github.com/princeiit423" target="_blank" rel="noopener" class="social-icon-btn" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          <a href="https://www.linkedin.com/in/faiz-hussain-257001250/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></a>
+          <a href="https://wa.me/918252410023" target="_blank" rel="noopener" class="social-icon-btn" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-white/5 text-center"><p class="font-mono text-xs text-gray-700">© 2026 Faiz Hussain. All rights reserved. · Web Developer in Ranchi, Jharkhand, India</p></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918252410023" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <script src="app.js"></script>
+
+  <script>
+    /* ===== mini Three.js accent for the contact hero ===== */
+    (function () {
+      if (typeof THREE === 'undefined') return;
+      const canvas = document.getElementById('hero-mini-canvas');
+      const hero = document.querySelector('.page-hero');
+      if (!canvas || !hero) return;
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const spin = reduceMotion ? 0 : 1;
+
+      let width = hero.clientWidth, height = hero.clientHeight;
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setSize(width, height);
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+      camera.position.set(0, 0, 8);
+
+      const core = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(1.9, 0),
+        new THREE.MeshBasicMaterial({ color: 0x7B61FF, wireframe: true, transparent: true, opacity: 0.4 })
+      );
+      core.position.set(-2.8, 0.6, -1);
+      scene.add(core);
+
+      const ring = new THREE.Mesh(
+        new THREE.TorusGeometry(1.0, 0.09, 8, 60),
+        new THREE.MeshBasicMaterial({ color: 0xf5c842, wireframe: true, transparent: true, opacity: 0.34 })
+      );
+      ring.position.set(2.8, -0.5, -1.4);
+      scene.add(ring);
+
+      let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
+      window.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+        mouseY = (e.clientY / window.innerHeight) * 2 - 1;
+        const px = document.getElementById('parallax-orb');
+        if (px) px.style.transform = `translate(${mouseX * 14}px, ${mouseY * 14}px)`;
+        const b1 = document.getElementById('blob-1');
+        const b2 = document.getElementById('blob-2');
+        if (b1) b1.style.marginLeft = `${mouseX * -10}px`;
+        if (b2) b2.style.marginRight = `${mouseX * 10}px`;
+      }, { passive: true });
+
+      function onResize() {
+        width = hero.clientWidth; height = hero.clientHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+      }
+      window.addEventListener('resize', onResize);
+
+      function animate(now) {
+        requestAnimationFrame(animate);
+        curX += (mouseY * 0.25 - curX) * 0.04;
+        curY += (mouseX * 0.3 - curY) * 0.04;
+        core.rotation.x = curX + now * 0.00015 * spin;
+        core.rotation.y = curY + now * 0.0002 * spin;
+        ring.rotation.x = now * 0.0001 * spin;
+        ring.rotation.z = now * 0.00012 * spin;
+        renderer.render(scene, camera);
+      }
+      requestAnimationFrame(animate);
+    })();
+  </script>
+
+  <script>
+    /* ===== SVG circuit-trace scroll indicator ===== */
+    (function () {
+      const fillPath = document.getElementById('circuit-fill-path');
+      const pctVal = document.getElementById('circuit-pct-val');
+      const nodes = document.querySelectorAll('.circuit-node');
+      if (!fillPath) return;
+
+      function update() {
+        const doc = document.documentElement;
+        const max = doc.scrollHeight - doc.clientHeight;
+        const pct = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+        fillPath.style.strokeDashoffset = String(100 - pct);
+        if (pctVal) pctVal.textContent = String(Math.round(pct)).padStart(2, '0');
+        nodes.forEach((n) => {
+          const p = parseFloat(n.getAttribute('data-pct'));
+          n.classList.toggle('active', pct >= p);
+        });
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services &amp; Pricing | Faiz Hussain — Web Developer, Ranchi</title>
+<meta name="description" content="Website development, SaaS builds, mobile apps, SEO and maintenance from Faiz Hussain, freelance full-stack developer in Ranchi, Jharkhand. See process, pricing and what's included." />
+<link rel="canonical" href="https://faiz-hussain.dev/services.html" />
+<meta name="theme-color" content="#0a0a0f" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+  tailwind.config = { theme: { extend: { fontFamily: { 'clash': ['"Clash Display"', 'sans-serif'], 'syne': ['Syne', 'sans-serif'], 'mono': ['"Space Mono"', 'monospace'] }, colors: { 'ink': '#0a0a0f', 'glass': 'rgba(255,255,255,0.04)', 'neon': '#00f5a0', 'gold': '#f5c842', 'plasma': '#7B61FF', 'muted': '#8a8a99' } } } }
+</script>
+
+<style>
+  /* ============================================================
+     BASE SYSTEM — inlined so this page renders standalone,
+     matching the palette/type used sitewide.
+  ============================================================ */
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:#0a0a0f;color:#fff;font-family:'Syne',sans-serif;cursor:none;}
+  @media (max-width:1023px){ body{cursor:auto;} }
+  ::selection{background:#00f5a0;color:#0a0a0f;}
+  a{text-decoration:none;color:inherit;}
+  ::-webkit-scrollbar{width:9px;}
+  ::-webkit-scrollbar-track{background:#0a0a0f;}
+  ::-webkit-scrollbar-thumb{background:#2a2a33;}
+
+  .cursor,.cursor-follower{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%);}
+  .cursor{width:6px;height:6px;background:#00f5a0;}
+  .cursor-follower{width:32px;height:32px;border:1px solid rgba(255,255,255,0.35);transition:width .25s,height .25s,border-color .25s,background .25s;}
+  .cursor-follower.hover{width:60px;height:60px;background:rgba(0,245,160,0.1);border-color:#00f5a0;}
+  @media (max-width:1023px){ .cursor,.cursor-follower{display:none;} }
+
+  .noise-overlay{position:fixed;inset:0;pointer-events:none;z-index:55;opacity:.045;mix-blend-mode:overlay;}
+  .gradient-text{background:linear-gradient(100deg,#00f5a0,#7B61FF 55%,#f5c842);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  .nav-glass{background:rgba(10,10,15,0.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-link{position:relative;}
+  .nav-link::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:#00f5a0;transition:width .35s cubic-bezier(.2,.8,.2,1);}
+  .nav-link:hover::after{width:100%;}
+
+  .hamburger-icon{display:flex;flex-direction:column;gap:5px;width:22px;}
+  .hamburger-icon span{display:block;height:1.5px;background:#fff;width:100%;}
+  .mobile-menu{background:#0a0a0f;transform:translateY(-110%);transition:transform .5s cubic-bezier(.2,.8,.2,1);}
+  .mobile-menu.open{transform:translateY(0);}
+
+  .cta-btn-sm{background:#00f5a0;color:#0a0a0f;font-weight:700;transition:transform .3s,box-shadow .3s;}
+  .cta-btn-sm:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(0,245,160,.5);}
+  .cta-btn-primary{background:linear-gradient(100deg,#00f5a0,#7B61FF);color:#0a0a0f;font-weight:700;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;}
+  .cta-btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 40px -16px rgba(0,245,160,.45);}
+  .cta-btn-ghost{border:1px solid rgba(255,255,255,0.16);color:#fff;font-weight:700;transition:border-color .3s,background .3s,transform .3s;}
+  .cta-btn-ghost:hover{border-color:#00f5a0;background:rgba(0,245,160,0.08);transform:translateY(-2px);}
+
+  .glass-card{background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(18px);}
+  .neon-card{border-color:rgba(0,245,160,0.35);box-shadow:0 0 60px -30px rgba(0,245,160,0.5);}
+
+  .breadcrumb{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;color:#8a8a99;text-transform:uppercase;}
+  .breadcrumb a:hover{color:#fff;}
+
+  .page-hero{padding-top:150px;min-height:70vh;display:flex;align-items:center;position:relative;}
+  .hero-bg-orb{position:absolute;border-radius:9999px;filter:blur(90px);}
+  .orb-1{width:520px;height:520px;top:-10%;right:-8%;background:radial-gradient(circle,#f5c842,transparent 70%);}
+
+  .reveal{opacity:0;transform:translateY(26px);}
+  .reveal.in{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);}
+
+  .wa-float{position:fixed;bottom:26px;right:26px;z-index:70;width:56px;height:56px;border-radius:50%;background:#00f5a0;display:flex;align-items:center;justify-content:center;color:#0a0a0f;box-shadow:0 16px 34px -12px rgba(0,245,160,.55);transition:transform .3s;}
+  .wa-float:hover{transform:scale(1.08) rotate(6deg);}
+
+  @media (prefers-reduced-motion:reduce){ *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important;} }
+
+  /* circuit-trace scroll indicator (sitewide component) */
+  .circuit-scroll{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:60;display:none;text-align:center;}
+  @media (min-width:1024px){ .circuit-scroll{display:block;} }
+  .circuit-scroll svg{width:22px;height:320px;overflow:visible;display:block;}
+  .circuit-track{stroke:rgba(255,255,255,0.1);stroke-width:2;fill:none;}
+  .circuit-fill{stroke:#00f5a0;stroke-width:2;fill:none;filter:drop-shadow(0 0 4px rgba(0,245,160,0.6));transition:stroke-dashoffset .1s linear;}
+  .circuit-node{fill:#0a0a0f;stroke:#5a5a68;stroke-width:1.5;transition:stroke .3s,fill .3s;}
+  .circuit-node.active{fill:#00f5a0;stroke:#00f5a0;filter:drop-shadow(0 0 6px rgba(0,245,160,0.85));}
+  .circuit-pct{font-family:'Space Mono',monospace;font-size:10px;color:#00f5a0;margin-top:10px;letter-spacing:.1em;}
+
+  .icon-svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* ============================================================
+     PAGE-SPECIFIC
+  ============================================================ */
+  #hero-stack-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+  .hero-parallax-layer{will-change:transform;}
+  .glass-blob{position:absolute;border-radius:9999px;filter:blur(60px);opacity:.24;pointer-events:none;animation:blob-float 11s ease-in-out infinite;}
+  @keyframes blob-float{0%,100%{transform:translateY(0) translateX(0);}50%{transform:translateY(-16px) translateX(10px);}}
+
+  .trust-chip{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.04em;color:#c7c7d2;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.08);padding:9px 14px;border-radius:999px;white-space:nowrap;}
+  .trust-chip svg{width:14px;height:14px;color:#00f5a0;flex-shrink:0;}
+
+  /* tilt */
+  .tilt-card{perspective:900px;}
+  .tilt-inner{transform-style:preserve-3d;transition:transform .12s ease-out;}
+
+  /* service cards */
+  .service-icon-box{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;}
+  .service-icon-box svg{width:24px;height:24px;}
+  .mini-tag{font-family:'Space Mono',monospace;font-size:10px;color:#8a8a99;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:4px 10px;border-radius:999px;}
+  .feature-li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#9a9aa5;line-height:1.5;}
+  .feature-li svg{width:14px;height:14px;flex-shrink:0;margin-top:2px;color:#00f5a0;}
+  .price-tag{font-family:'Space Mono',monospace;font-size:11px;color:#f5c842;}
+
+  /* process */
+  .process-rail{position:relative;}
+  .process-rail::before{content:'';position:absolute;left:27px;top:6px;bottom:6px;width:2px;background:rgba(255,255,255,0.08);}
+  .process-rail-fill{position:absolute;left:27px;top:6px;width:2px;background:linear-gradient(to bottom,#00f5a0,#7B61FF);height:0%;transition:height .1s linear;}
+  .process-step{position:relative;padding-left:70px;}
+  .process-num{position:absolute;left:6px;top:0;width:44px;height:44px;border-radius:50%;background:#0a0a0f;border:2px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-family:'Clash Display',sans-serif;font-weight:700;font-size:16px;transition:border-color .4s,box-shadow .4s,color .4s;}
+  .process-step.active .process-num{border-color:#00f5a0;color:#00f5a0;box-shadow:0 0 0 6px rgba(0,245,160,0.08);}
+
+  /* pricing */
+  .pricing-card{position:relative;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s;}
+  .pricing-card:hover{transform:translateY(-6px);}
+  .pricing-card.featured{border-color:rgba(0,245,160,0.4);}
+  .check-li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:#b7b7c2;}
+  .check-li svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;color:#00f5a0;}
+
+  /* comparison table */
+  .cmp-table{width:100%;border-collapse:collapse;}
+  .cmp-table th,.cmp-table td{padding:14px 16px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px;}
+  .cmp-table th:first-child,.cmp-table td:first-child{text-align:left;color:#c7c7d2;}
+  .cmp-table th{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#8a8a99;font-weight:400;}
+  .cmp-table td svg{width:16px;height:16px;margin:0 auto;color:#00f5a0;}
+  .cmp-table .dash{color:#3f3f47;}
+
+  /* included strip */
+  .inc-chip{display:flex;align-items:center;gap:10px;}
+  .inc-chip svg{width:18px;height:18px;color:#00f5a0;flex-shrink:0;}
+
+  /* faq */
+  .faq-item{border-top:1px solid rgba(255,255,255,0.08);}
+  .faq-item:last-child{border-bottom:1px solid rgba(255,255,255,0.08);}
+  .faq-question{display:flex;align-items:center;justify-content:between;justify-content:space-between;cursor:pointer;}
+  .faq-icon{transition:transform .35s cubic-bezier(.2,.8,.2,1);}
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.2,.8,.2,1);}
+
+  /* engagement toggle */
+  .toggle-pill{display:inline-flex;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:4px;}
+  .toggle-opt{padding:10px 22px;border-radius:999px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.03em;color:#8a8a99;cursor:pointer;transition:all .3s;}
+  .toggle-opt.active{background:#00f5a0;color:#0a0a0f;font-weight:700;}
+</style>
+</head>
+
+<body class="overflow-x-hidden font-syne">
+
+<div id="cursor" class="cursor"></div><div id="cursor-follower" class="cursor-follower"></div>
+<div class="noise-overlay" id="noise"></div>
+
+<div class="circuit-scroll" aria-hidden="true">
+  <svg viewBox="0 0 22 320" preserveAspectRatio="none">
+    <path class="circuit-track" d="M11 6 V314"></path>
+    <path id="circuit-fill-path" class="circuit-fill" d="M11 6 V314" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"></path>
+    <circle class="circuit-node" data-pct="2" cx="11" cy="6" r="4"></circle>
+    <circle class="circuit-node" data-pct="20" cx="11" cy="65" r="4"></circle>
+    <circle class="circuit-node" data-pct="40" cx="11" cy="125" r="4"></circle>
+    <circle class="circuit-node" data-pct="60" cx="11" cy="185" r="4"></circle>
+    <circle class="circuit-node" data-pct="80" cx="11" cy="248" r="4"></circle>
+    <circle class="circuit-node" data-pct="97" cx="11" cy="314" r="4"></circle>
+  </svg>
+  <div class="circuit-pct"><span id="circuit-pct-val">00</span>%</div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between nav-glass">
+  <a href="index.html" class="font-clash font-bold text-xl tracking-tight"><span class="text-neon">F</span>aiz<span class="text-plasma">.</span></a>
+  <div class="hidden lg:flex items-center gap-8">
+    <a href="index.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Home</a>
+    <a href="about.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">About</a>
+    <a href="work.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Work</a>
+    <a href="services.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white">Services</a>
+    <a href="testimonials.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Reviews</a>
+    <a href="contact.html" class="nav-link font-mono text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Contact</a>
+  </div>
+  <a href="contact.html" class="cta-btn-sm font-mono text-xs uppercase tracking-widest px-5 py-2.5 rounded-full hidden sm:inline-flex">Hire Me</a>
+  <button id="menu-toggle" class="lg:hidden text-white z-50"><div class="hamburger-icon"><span></span><span></span><span></span></div></button>
+</nav>
+<div id="mobile-menu" class="mobile-menu fixed inset-0 z-40 flex flex-col items-center justify-center">
+  <div class="flex flex-col items-center gap-7">
+    <a href="index.html" class="font-clash text-4xl font-bold" onclick="closeMobileMenu()">Home</a>
+    <a href="about.html" class="font-clash text-4xl font-bold" onclick="closeMobileMenu()">About</a>
+    <a href="work.html" class="font-clash text-4xl font-bold" onclick="closeMobileMenu()">Work</a>
+    <a href="services.html" class="font-clash text-4xl font-bold" onclick="closeMobileMenu()">Services</a>
+    <a href="testimonials.html" class="font-clash text-4xl font-bold" onclick="closeMobileMenu()">Reviews</a>
+    <a href="contact.html" class="font-clash text-4xl font-bold" onclick="closeMobileMenu()">Contact</a>
+  </div>
+</div>
+
+<!-- =========================================================
+     HERO — new 3D scene: an exploded, isometric stack of
+     layered plates (frontend / logic / API / data / infra)
+     with vertical data-pulses between them and small orbiting
+     module cubes. Distinct from the wireframe polyhedron
+     (home), the medallion + orbiting orbs (reviews), and the
+     network graph (about) — chosen to visually say "full
+     stack, built in layers" for a Services page.
+========================================================== -->
+<section class="page-hero relative px-6 pb-16 overflow-hidden">
+  <div class="hero-bg-orb orb-1" style="opacity:0.14;"></div>
+  <canvas id="hero-stack-canvas" aria-hidden="true"></canvas>
+  <div class="glass-blob hero-parallax-layer" data-depth="0.07" style="width:210px;height:210px;top:12%;left:8%;background:#f5c842;"></div>
+  <div class="glass-blob hero-parallax-layer" data-depth="0.1" style="width:250px;height:250px;bottom:2%;right:6%;background:#7B61FF;animation-delay:-4s;"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="breadcrumb mb-6"><a href="index.html">Home</a> / <span class="text-gray-400">Services</span></div>
+    <div class="font-mono text-xs uppercase tracking-widest text-neon mb-6 hero-parallax-layer" data-depth="0.02">// What I Offer</div>
+    <h1 class="font-clash font-bold text-5xl md:text-7xl leading-tight mb-6 hero-parallax-layer" data-depth="0.03">One developer,<br/><span class="gradient-text">the full stack.</span></h1>
+    <p class="text-gray-400 text-lg max-w-2xl mb-10 hero-parallax-layer" data-depth="0.02">From a single landing page to a complete SaaS platform — here's exactly what's included, how the process works, and what it typically costs.</p>
+    <div class="flex flex-wrap gap-3 hero-parallax-layer" data-depth="0.02">
+      <span class="trust-chip"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 118 0v4"/></svg>Fixed quote before work starts</span>
+      <span class="trust-chip"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Reply within 24h</span>
+      <span class="trust-chip"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Free discovery call</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SERVICES GRID
+========================================================== -->
+<section class="px-6 pb-24">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-end justify-between mb-10 reveal">
+      <h2 class="font-clash font-bold text-3xl md:text-4xl">What's on offer</h2>
+      <span class="font-mono text-[11px] text-gray-500 hidden sm:block">8 services</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="glass-card p-7 rounded-3xl group reveal tilt-card">
+        <div class="tilt-inner">
+          <div class="service-icon-box" style="background:rgba(0,245,160,0.1);color:#00f5a0;"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 5h18M3 12h18M3 19h18"/></svg></div>
+          <h3 class="font-clash font-bold text-lg mb-2 group-hover:text-neon transition-colors">Website Development</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Custom, high-performance sites — landing pages to complex multi-page builds, fully responsive and SEO-ready.</p>
+          <div class="space-y-1.5 mb-5">
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Custom-coded, no page builders</div>
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Core Web Vitals tuned</div>
+          </div>
+          <div class="flex items-center justify-between"><span class="price-tag">From ₹10k</span><div class="flex flex-wrap gap-1.5 justify-end"><span class="mini-tag">React</span><span class="mini-tag">Node</span></div></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-7 rounded-3xl group reveal tilt-card">
+        <div class="tilt-inner">
+          <div class="service-icon-box" style="background:rgba(123,97,255,0.12);color:#a996ff;"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <h3 class="font-clash font-bold text-lg mb-2 group-hover:text-plasma transition-colors">Mobile App Development</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Cross-platform apps that work seamlessly on iOS and Android, built for smooth performance and a native feel.</p>
+          <div class="space-y-1.5 mb-5">
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>One codebase, both platforms</div>
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Push notifications ready</div>
+          </div>
+          <div class="flex items-center justify-between"><span class="price-tag">Custom quote</span><div class="flex flex-wrap gap-1.5 justify-end"><span class="mini-tag">React Native</span></div></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-7 rounded-3xl group reveal tilt-card">
+        <div class="tilt-inner">
+          <div class="service-icon-box" style="background:rgba(245,200,66,0.14);color:#f5c842;"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M4 21v-6M4 9V3M12 21v-9M12 8V3M20 21v-4M20 13V3M2 15h4M10 8h4M18 13h4"/></svg></div>
+          <h3 class="font-clash font-bold text-lg mb-2 group-hover:text-gold transition-colors">Full Stack &amp; SaaS Apps</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">End-to-end product builds — database design, API architecture and frontend — so you can focus on the business.</p>
+          <div class="space-y-1.5 mb-5">
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Auth &amp; user accounts</div>
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Scales past MVP</div>
+          </div>
+          <div class="flex items-center justify-between"><span class="price-tag">From ₹75k</span><div class="flex flex-wrap gap-1.5 justify-end"><span class="mini-tag">MERN</span></div></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-7 rounded-3xl group reveal tilt-card">
+        <div class="tilt-inner">
+          <div class="service-icon-box" style="background:rgba(0,245,160,0.1);color:#00f5a0;"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <h3 class="font-clash font-bold text-lg mb-2 group-hover:text-neon transition-colors">SEO Optimization</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Technical, on-page and local SEO so your site ranks for the terms customers actually search.</p>
+          <div class="space-y-1.5 mb-5">
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Structured data included</div>
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Local search targeting</div>
+          </div>
+          <div class="flex items-center justify-between"><span class="price-tag">Add-on / audit</span><div class="flex flex-wrap gap-1.5 justify-end"><span class="mini-tag">Local SEO</span></div></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-7 rounded-3xl group reveal tilt-card">
+        <div class="tilt-inner">
+          <div class="service-icon-box" style="background:rgba(123,97,255,0.12);color:#a996ff;"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3 class="font-clash font-bold text-lg mb-2 group-hover:text-plasma transition-colors">UI/UX Design</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Interfaces rooted in user psychology and business goals — designs users enjoy and that drive results.</p>
+          <div class="space-y-1.5 mb-5">
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Wireframe to prototype</div>
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Conversion-focused layout</div>
+          </div>
+          <div class="flex items-center justify-between"><span class="price-tag">Bundled or standalone</span><div class="flex flex-wrap gap-1.5 justify-end"><span class="mini-tag">Figma</span></div></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-7 rounded-3xl group neon-card reveal tilt-card">
+        <div class="tilt-inner">
+          <div class="service-icon-box" style="background:rgba(0,245,160,0.1);color:#00f5a0;"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3 class="font-clash font-bold text-lg mb-2 group-hover:text-neon transition-colors">Website Maintenance</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Ongoing packages covering bug fixes, content updates, performance monitoring and security patches.</p>
+          <div class="space-y-1.5 mb-5">
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Monthly health checks</div>
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Priority bug turnaround</div>
+          </div>
+          <div class="flex items-center justify-between"><span class="price-tag">Monthly retainer</span><div class="flex flex-wrap gap-1.5 justify-end"><span class="mini-tag">Security</span></div></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-7 rounded-3xl group reveal tilt-card">
+        <div class="tilt-inner">
+          <div class="service-icon-box" style="background:rgba(245,200,66,0.14);color:#f5c842;"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <h3 class="font-clash font-bold text-lg mb-2 group-hover:text-gold transition-colors">Performance Engineering</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Speed audits and fixes targeting load time, Core Web Vitals and real-user metrics — not just lab scores.</p>
+          <div class="space-y-1.5 mb-5">
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Bundle &amp; asset audits</div>
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Before/after report</div>
+          </div>
+          <div class="flex items-center justify-between"><span class="price-tag">Add-on / audit</span><div class="flex flex-wrap gap-1.5 justify-end"><span class="mini-tag">Web Vitals</span></div></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-7 rounded-3xl group reveal tilt-card">
+        <div class="tilt-inner">
+          <div class="service-icon-box" style="background:rgba(0,245,160,0.1);color:#00f5a0;"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg></div>
+          <h3 class="font-clash font-bold text-lg mb-2 group-hover:text-neon transition-colors">Technical Consulting</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">A second opinion on an existing build — architecture review, code audit, or a go/no-go on a vendor's proposal.</p>
+          <div class="space-y-1.5 mb-5">
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Written findings report</div>
+            <div class="feature-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>No obligation to hire further</div>
+          </div>
+          <div class="flex items-center justify-between"><span class="price-tag">Hourly / audit</span><div class="flex flex-wrap gap-1.5 justify-end"><span class="mini-tag">Architecture</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PROCESS
+========================================================== -->
+<section class="px-6 pb-24">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <div class="font-mono text-xs uppercase tracking-widest text-gold mb-6">// How We'll Work</div>
+      <h2 class="font-clash font-bold text-4xl md:text-6xl leading-tight">The <span class="gradient-text">Process</span></h2>
+    </div>
+    <div class="process-rail" id="process-rail">
+      <div class="process-rail-fill" id="process-fill"></div>
+      <div class="space-y-16">
+        <div class="process-step reveal" data-step-index="0">
+          <div class="process-num">01</div>
+          <h3 class="font-clash font-bold text-xl mb-2 flex items-center gap-2"><svg style="width:16px;height:16px;" class="icon-svg text-neon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Discovery call</h3>
+          <p class="text-gray-400 text-sm">We talk through your goals, audience and budget on a quick WhatsApp or call — no obligation.</p>
+        </div>
+        <div class="process-step reveal" data-step-index="1">
+          <div class="process-num">02</div>
+          <h3 class="font-clash font-bold text-xl mb-2 flex items-center gap-2"><svg style="width:16px;height:16px;" class="icon-svg text-neon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Proposal &amp; scope</h3>
+          <p class="text-gray-400 text-sm">You get a clear scope, timeline and price in writing before any work starts.</p>
+        </div>
+        <div class="process-step reveal" data-step-index="2">
+          <div class="process-num">03</div>
+          <h3 class="font-clash font-bold text-xl mb-2 flex items-center gap-2"><svg style="width:16px;height:16px;" class="icon-svg text-neon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Design &amp; build</h3>
+          <p class="text-gray-400 text-sm">I share progress at each milestone on a staging link so there are no surprises at delivery.</p>
+        </div>
+        <div class="process-step reveal" data-step-index="3">
+          <div class="process-num">04</div>
+          <h3 class="font-clash font-bold text-xl mb-2 flex items-center gap-2"><svg style="width:16px;height:16px;" class="icon-svg text-neon" viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>Launch &amp; support</h3>
+          <p class="text-gray-400 text-sm">Site goes live, and you get a support window to catch anything before we close out.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PRICING
+========================================================== -->
+<section class="px-6 pb-16">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <div class="font-mono text-xs uppercase tracking-widest text-plasma mb-6">// Starting Pricing</div>
+      <h2 class="font-clash font-bold text-4xl md:text-6xl leading-tight">Transparent <span class="gradient-text">Ranges</span></h2>
+      <p class="text-gray-400 mt-4 max-w-xl mx-auto">Every project gets a fixed quote after the discovery call — these are starting points, not final prices.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+      <div class="pricing-card glass-card p-8 rounded-3xl reveal">
+        <h3 class="font-clash font-bold text-xl mb-2">Landing Page</h3>
+        <div class="font-clash font-bold text-4xl mb-1">₹10k <span class="text-base text-gray-500 font-syne">+</span></div>
+        <div class="font-mono text-[11px] text-gray-500 mb-6">3–5 day turnaround</div>
+        <ul class="space-y-2.5 mb-8">
+          <li class="check-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>1–3 sections, single page</li>
+          <li class="check-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Fully responsive</li>
+          <li class="check-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Basic on-page SEO</li>
+        </ul>
+        <a href="contact.html" class="cta-btn-ghost w-full text-center block py-3 rounded-full font-clash font-semibold text-sm">Get a Quote</a>
+      </div>
+
+      <div class="pricing-card featured glass-card p-8 rounded-3xl relative reveal">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-neon text-ink text-xs font-mono uppercase px-3 py-1 rounded-full">Most Chosen</span>
+        <h3 class="font-clash font-bold text-xl mb-2">Business Website</h3>
+        <div class="font-clash font-bold text-4xl mb-1">₹25k <span class="text-base text-gray-500 font-syne">+</span></div>
+        <div class="font-mono text-[11px] text-gray-500 mb-6">1–2 week turnaround</div>
+        <ul class="space-y-2.5 mb-8">
+          <li class="check-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Multi-page + contact form</li>
+          <li class="check-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Local SEO setup</li>
+          <li class="check-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>1 round of free revisions</li>
+        </ul>
+        <a href="contact.html" class="cta-btn-primary w-full text-center block py-3 rounded-full font-clash font-semibold text-sm">Get a Quote</a>
+      </div>
+
+      <div class="pricing-card glass-card p-8 rounded-3xl reveal">
+        <h3 class="font-clash font-bold text-xl mb-2">SaaS / Full Stack</h3>
+        <div class="font-clash font-bold text-4xl mb-1">₹75k <span class="text-base text-gray-500 font-syne">+</span></div>
+        <div class="font-mono text-[11px] text-gray-500 mb-6">4–8 week turnaround</div>
+        <ul class="space-y-2.5 mb-8">
+          <li class="check-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Custom backend + database</li>
+          <li class="check-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Auth &amp; user accounts</li>
+          <li class="check-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Ongoing support available</li>
+        </ul>
+        <a href="contact.html" class="cta-btn-ghost w-full text-center block py-3 rounded-full font-clash font-semibold text-sm">Get a Quote</a>
+      </div>
+    </div>
+
+    <!-- what's always included -->
+    <div class="glass-card rounded-3xl p-8 md:p-10 reveal">
+      <div class="font-mono text-xs uppercase tracking-widest text-gray-500 mb-6">Included at every tier, no exceptions</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="inc-chip"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 118 0v4"/></svg>Full code ownership</div>
+        <div class="inc-chip"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M4 21v-6M4 9V3M12 21v-9M12 8V3M20 21v-4M20 13V3M2 15h4M10 8h4M18 13h4"/></svg>Live staging link</div>
+        <div class="inc-chip"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>No hidden fees</div>
+        <div class="inc-chip"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>24h response window</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     COMPARE TIERS
+========================================================== -->
+<section class="px-6 pb-24">
+  <div class="max-w-5xl mx-auto reveal">
+    <div class="text-center mb-10">
+      <div class="font-mono text-xs uppercase tracking-widest text-gray-500 mb-4">// Side by side</div>
+      <h2 class="font-clash font-bold text-3xl md:text-4xl">Compare what's included</h2>
+    </div>
+    <div class="glass-card rounded-3xl p-4 md:p-6 overflow-x-auto">
+      <table class="cmp-table min-w-[560px]">
+        <thead>
+          <tr><th>Feature</th><th>Landing</th><th>Business</th><th>SaaS</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pages</td><td>1–3</td><td>5–8</td><td>Unlimited</td></tr>
+          <tr><td>Custom backend</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
+          <tr><td>User accounts / auth</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
+          <tr><td>Local SEO setup</td><td><span class="dash">—</span></td><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
+          <tr><td>Free revision round</td><td><span class="dash">—</span></td><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
+          <tr><td>Support window post-launch</td><td>3 days</td><td>2 weeks</td><td>4 weeks</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ENGAGEMENT MODEL TOGGLE
+========================================================== -->
+<section class="px-6 pb-24">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <div class="font-mono text-xs uppercase tracking-widest text-gray-500 mb-6">// Engagement style</div>
+    <h2 class="font-clash font-bold text-3xl md:text-4xl mb-8">Pick how you'd rather work</h2>
+    <div class="toggle-pill mb-8">
+      <span class="toggle-opt active" data-target="project">Project-based</span>
+      <span class="toggle-opt" data-target="retainer">Ongoing retainer</span>
+    </div>
+    <div id="engagement-panel" class="glass-card rounded-3xl p-8 md:p-10 text-left">
+      <div data-panel="project">
+        <h3 class="font-clash font-bold text-xl mb-3">Project-based</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">A defined scope, a fixed price, a fixed timeline. Best when you know what you need built and want cost certainty from day one. Covers everything from a landing page to a full SaaS MVP.</p>
+      </div>
+      <div data-panel="retainer" class="hidden">
+        <h3 class="font-clash font-bold text-xl mb-3">Ongoing retainer</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">A set number of hours each month for maintenance, small features and priority support. Best once you're live and need a developer on call without re-scoping every change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FAQ
+========================================================== -->
+<section class="px-6 pb-24">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <div class="font-mono text-xs uppercase tracking-widest text-gold mb-6">// FAQ</div>
+      <h2 class="font-clash font-bold text-4xl md:text-5xl">Common Questions</h2>
+    </div>
+    <div class="reveal">
+      <div class="faq-item py-2">
+        <div class="faq-question py-4"><h3 class="font-clash font-semibold text-lg pr-4">How long does a typical project take?</h3><span class="faq-icon text-2xl text-neon">+</span></div>
+        <div class="faq-answer"><p class="text-gray-400 text-sm pb-5 pr-8">A landing page usually takes 3–5 days; a full business website 1–2 weeks; a SaaS build 4–8 weeks depending on scope, agreed upfront in the proposal.</p></div>
+      </div>
+      <div class="faq-item py-2">
+        <div class="faq-question py-4"><h3 class="font-clash font-semibold text-lg pr-4">Do you work with clients outside Ranchi?</h3><span class="faq-icon text-2xl text-neon">+</span></div>
+        <div class="faq-answer"><p class="text-gray-400 text-sm pb-5 pr-8">Yes — most of my clients are remote. I'm available for in-person meetings if you're in Ranchi, and calls/WhatsApp for everyone else.</p></div>
+      </div>
+      <div class="faq-item py-2">
+        <div class="faq-question py-4"><h3 class="font-clash font-semibold text-lg pr-4">What do you need from me to get started?</h3><span class="faq-icon text-2xl text-neon">+</span></div>
+        <div class="faq-answer"><p class="text-gray-400 text-sm pb-5 pr-8">A short brief on your goals and audience, any brand assets you already have, and 30 minutes for a discovery call — I'll guide the rest.</p></div>
+      </div>
+      <div class="faq-item py-2">
+        <div class="faq-question py-4"><h3 class="font-clash font-semibold text-lg pr-4">Do you offer maintenance after launch?</h3><span class="faq-icon text-2xl text-neon">+</span></div>
+        <div class="faq-answer"><p class="text-gray-400 text-sm pb-5 pr-8">Yes, monthly maintenance packages are available covering updates, monitoring and small fixes — details shared after launch.</p></div>
+      </div>
+      <div class="faq-item py-2">
+        <div class="faq-question py-4"><h3 class="font-clash font-semibold text-lg pr-4">Who owns the code once the project's done?</h3><span class="faq-icon text-2xl text-neon">+</span></div>
+        <div class="faq-answer"><p class="text-gray-400 text-sm pb-5 pr-8">You do, fully. Full source and asset handoff at launch — no dependency on me to make future changes if you choose not to continue working together.</p></div>
+      </div>
+      <div class="faq-item py-2">
+        <div class="faq-question py-4"><h3 class="font-clash font-semibold text-lg pr-4">How do payments work?</h3><span class="faq-icon text-2xl text-neon">+</span></div>
+        <div class="faq-answer"><p class="text-gray-400 text-sm pb-5 pr-8">A deposit to begin work after scope sign-off, with the balance due at launch — or split into milestones for larger SaaS builds. Details are always in the written proposal.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6">
+  <div class="max-w-5xl mx-auto text-center glass-card neon-card rounded-3xl p-12 md:p-16 reveal">
+    <h2 class="font-clash font-bold text-4xl md:text-5xl mb-6">Ready to start?</h2>
+    <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Tell me about your project and I'll get back to you within 24 hours.</p>
+    <a href="contact.html" class="cta-btn-primary font-clash font-semibold px-10 py-4 rounded-full text-base inline-flex items-center">Get a Free Quote <span class="ml-2">→</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative py-16 px-6 border-t border-white/5">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div class="text-center lg:text-left"><div class="font-clash font-bold text-3xl mb-2"><span class="text-neon">F</span>aiz<span class="text-plasma">.</span></div><p class="text-gray-500 text-sm">Web Developer · Freelancer · Ranchi, Jharkhand</p></div>
+      <div class="flex flex-wrap gap-6 justify-center">
+        <a href="index.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Home</a>
+        <a href="about.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">About</a>
+        <a href="work.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Work</a>
+        <a href="services.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Services</a>
+        <a href="testimonials.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Reviews</a>
+        <a href="contact.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-white/5 text-center"><p class="font-mono text-xs text-gray-700">© 2026 Faiz Hussain. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918252410023" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+/* ===== base chrome ===== */
+(function(){
+  const dot = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-follower');
+  let mx=0,my=0,rx=0,ry=0;
+  window.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
+  function loop(){ rx+=(mx-rx)*0.18; ry+=(my-ry)*0.18; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(loop); }
+  loop();
+  document.querySelectorAll('a,button,input,select,textarea,.toggle-opt').forEach(el=>{
+    el.addEventListener('mouseenter', ()=>ring.classList.add('hover'));
+    el.addEventListener('mouseleave', ()=>ring.classList.remove('hover'));
+  });
+  document.getElementById('noise').innerHTML = '<svg width="100%" height="100%"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>';
+})();
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+menuToggle.addEventListener('click', ()=> mobileMenu.classList.toggle('open'));
+function closeMobileMenu(){ mobileMenu.classList.remove('open'); }
+
+/* ===== circuit-trace scroll indicator ===== */
+(function () {
+  const fillPath = document.getElementById('circuit-fill-path');
+  const pctVal = document.getElementById('circuit-pct-val');
+  const nodes = document.querySelectorAll('.circuit-node');
+  if (!fillPath) return;
+  function update() {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const pct = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+    fillPath.style.strokeDashoffset = String(100 - pct);
+    if (pctVal) pctVal.textContent = String(Math.round(pct)).padStart(2, '0');
+    nodes.forEach((n) => { n.classList.toggle('active', pct >= parseFloat(n.getAttribute('data-pct'))); });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+/* ===== scroll reveals ===== */
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12 });
+  els.forEach(el=>io.observe(el));
+})();
+
+/* ===== tilt on service cards ===== */
+document.querySelectorAll('.tilt-card').forEach(card=>{
+  const inner = card.querySelector('.tilt-inner');
+  card.addEventListener('mousemove', e=>{
+    const r = card.getBoundingClientRect();
+    const px = (e.clientX - r.left)/r.width - 0.5;
+    const py = (e.clientY - r.top)/r.height - 0.5;
+    inner.style.transform = `rotateX(${py*-6}deg) rotateY(${px*6}deg) translateZ(4px)`;
+  });
+  card.addEventListener('mouseleave', ()=>{ inner.style.transform = 'rotateX(0) rotateY(0) translateZ(0)'; });
+});
+
+/* ===== hero parallax ===== */
+(function(){
+  const layers = document.querySelectorAll('.hero-parallax-layer');
+  let mouseX=0, mouseY=0, scrollY=0;
+  window.addEventListener('mousemove', e=>{
+    mouseX = (e.clientX/window.innerWidth - 0.5);
+    mouseY = (e.clientY/window.innerHeight - 0.5);
+  }, { passive:true });
+  window.addEventListener('scroll', ()=>{ scrollY = window.scrollY; }, { passive:true });
+  function tick(){
+    layers.forEach(el=>{
+      const depth = parseFloat(el.getAttribute('data-depth')) || 0.03;
+      const tx = mouseX * depth * 220;
+      const ty = mouseY * depth * 140 + scrollY * depth * 0.35;
+      el.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+    });
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+/* ===== process rail fill on scroll ===== */
+(function(){
+  const rail = document.getElementById('process-rail');
+  const fill = document.getElementById('process-fill');
+  const steps = document.querySelectorAll('.process-step');
+  if(!rail || !fill) return;
+  function update(){
+    const r = rail.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const total = r.height;
+    const start = vh * 0.75;
+    const progressed = Math.min(Math.max(start - r.top, 0), total);
+    const pct = total > 0 ? (progressed/total)*100 : 0;
+    fill.style.height = pct + '%';
+    steps.forEach(s=>{
+      const sr = s.getBoundingClientRect();
+      if(sr.top < vh*0.7) s.classList.add('active');
+    });
+  }
+  window.addEventListener('scroll', update, { passive:true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+/* ===== FAQ accordion ===== */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-question');
+  const a = item.querySelector('.faq-answer');
+  q.addEventListener('click', ()=>{
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o=>{ o.classList.remove('open'); o.querySelector('.faq-answer').style.maxHeight = null; });
+    if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+  });
+});
+
+/* ===== engagement toggle ===== */
+document.querySelectorAll('.toggle-opt').forEach(opt=>{
+  opt.addEventListener('click', ()=>{
+    document.querySelectorAll('.toggle-opt').forEach(o=>o.classList.remove('active'));
+    opt.classList.add('active');
+    const target = opt.getAttribute('data-target');
+    document.querySelectorAll('[data-panel]').forEach(p=>{
+      p.classList.toggle('hidden', p.getAttribute('data-panel') !== target);
+    });
+  });
+});
+
+/* =========================================================
+   NEW 3D HERO — exploded isometric layer stack: five flat
+   plates (representing UI / logic / API / data / infra)
+   hovering with a slight offset, gentle independent bob,
+   vertical data-pulses traveling between layers, and small
+   orbiting module cubes. Distinct from the wireframe
+   polyhedron, medallion + orbs, and network graph used
+   elsewhere on the site.
+========================================================== */
+(function () {
+  if (typeof THREE === 'undefined') return;
+  const canvas = document.getElementById('hero-stack-canvas');
+  const hero = document.querySelector('.page-hero');
+  if (!canvas || !hero) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const spin = reduceMotion ? 0 : 1;
+
+  let width = hero.clientWidth, height = hero.clientHeight;
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setSize(width, height);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 100);
+  camera.position.set(0, 0, 9);
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+  const key = new THREE.PointLight(0x00f5a0, 1.2, 20);
+  key.position.set(3, 3, 5);
+  scene.add(key);
+  const rim = new THREE.PointLight(0x7B61FF, 1.0, 20);
+  rim.position.set(-4, -2, 4);
+  scene.add(rim);
+
+  const stackGroup = new THREE.Group();
+  stackGroup.rotation.x = 0.5;
+  stackGroup.rotation.y = 0.55;
+  scene.add(stackGroup);
+
+  const layerColors = [0x00f5a0, 0x7B61FF, 0xf5c842, 0x00f5a0, 0x7B61FF];
+  const layerCount = 5;
+  const layers = [];
+  for (let i = 0; i < layerCount; i++) {
+    const w = 2.5 - i * 0.14;
+    const geo = new THREE.BoxGeometry(w, 0.11, 1.35);
+    const mat = new THREE.MeshStandardMaterial({ color: layerColors[i], metalness: 0.35, roughness: 0.45, transparent: true, opacity: 0.88 });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.y = (i - (layerCount - 1) / 2) * 0.66;
+    mesh.userData = { baseY: mesh.position.y, phase: i * 0.8 };
+    stackGroup.add(mesh);
+    layers.push(mesh);
+
+    const edgesGeo = new THREE.EdgesGeometry(geo);
+    const edgeLine = new THREE.LineSegments(edgesGeo, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.18 }));
+    edgeLine.position.y = mesh.position.y;
+    edgeLine.userData = { baseY: mesh.position.y };
+    stackGroup.add(edgeLine);
+    layers[i].edge = edgeLine;
+  }
+
+  // vertical pulses traveling between consecutive layers
+  const pulses = [];
+  const pulseGeo = new THREE.SphereGeometry(0.055, 12, 12);
+  for (let i = 0; i < layerCount - 1; i++) {
+    const mat = new THREE.MeshBasicMaterial({ color: 0x00f5a0, transparent: true, opacity: 0.9 });
+    const pulse = new THREE.Mesh(pulseGeo, mat);
+    pulse.userData = { from: i, to: i + 1, t: Math.random(), speed: 0.35 + Math.random() * 0.25 };
+    stackGroup.add(pulse);
+    pulses.push(pulse);
+  }
+
+  // small orbiting module cubes
+  const modColors = [0x00f5a0, 0x7B61FF, 0xf5c842];
+  const modules = [];
+  const modGeo = new THREE.BoxGeometry(0.14, 0.14, 0.14);
+  for (let i = 0; i < 6; i++) {
+    const mat = new THREE.MeshStandardMaterial({ color: modColors[i % modColors.length], metalness: 0.4, roughness: 0.4, transparent: true, opacity: 0.85 });
+    const cube = new THREE.Mesh(modGeo, mat);
+    const r = 2.3 + Math.random() * 0.6;
+    cube.userData = { r, speed: 0.12 + Math.random() * 0.15, angle0: Math.random() * Math.PI * 2, yOff: (Math.random() - 0.5) * 1.6 };
+    scene.add(cube);
+    modules.push(cube);
+  }
+
+  let mouseX = 0, mouseY = 0;
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+    mouseY = (e.clientY / window.innerHeight) * 2 - 1;
+  }, { passive: true });
+
+  function onResize() {
+    width = hero.clientWidth; height = hero.clientHeight;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+  }
+  window.addEventListener('resize', onResize);
+
+  const clock = new THREE.Clock();
+  function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    stackGroup.rotation.y = 0.55 + t * 0.05 * spin + mouseX * 0.3;
+    stackGroup.rotation.x = 0.5 + mouseY * 0.12;
+
+    layers.forEach((l) => {
+      const y = l.userData.baseY + Math.sin(t * 0.7 + l.userData.phase) * 0.045;
+      l.position.y = y;
+      if (l.edge) l.edge.position.y = y;
+    });
+
+    pulses.forEach((p) => {
+      p.userData.t += 0.01 * p.userData.speed * 60 * 0.016 * spin;
+      if (p.userData.t > 1) p.userData.t = 0;
+      const a = layers[p.userData.from].position.y;
+      const b = layers[p.userData.to].position.y;
+      p.position.y = a + (b - a) * p.userData.t;
+      p.position.x = 0;
+      p.position.z = 0;
+    });
+
+    modules.forEach((m) => {
+      const mt = t * m.userData.speed + m.userData.angle0;
+      m.position.x = Math.cos(mt) * m.userData.r;
+      m.position.z = Math.sin(mt) * m.userData.r - 1;
+      m.position.y = m.userData.yOff + Math.sin(mt * 1.7) * 0.1;
+      m.rotation.x += 0.01 * spin;
+      m.rotation.y += 0.013 * spin;
+    });
+
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+</script>
+</body>
+</html>
